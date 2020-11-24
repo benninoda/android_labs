@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Конвертер</string>
+    <string name="converterTemperatue">test</string>
+    <string name="_1" formatted="false">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_comma">.</string>
+    <string name="_0">0</string>
+    <string name="_del">⌫</string>
+    <string name="_0_0">0.0</string>
+    <string name="_C">C</string>
+    <string name="_plus_menus">+/-</string>
+    <string name="blyat">BLYAT\'</string>
+    <string name="toast_copy">Скопировано</string>
+    <string name="input_value">"Входные данные "</string>
+    <string name="output">"Выходные данные "</string>
+    <string name="output_value">"Выходные данные "</string>
+    <string-array name="convertCategories">
+        <item>Длина</item>
+        <item>Площадь</item>
+        <item>Время</item>
+        <item>Скорость</item>
+        <item>Масса</item>
+    </string-array>
+    <string-array name="mass">
+        <item>Миллиграмм</item>
+        <item>Грамм</item>
+        <item>Килограмм</item>
+        <item>Центнер</item>
+        <item>Тонна</item>
+        <item>Фунт</item>
+        <item>Унция</item>
+        <item>Карат</item>
+    </string-array>
+    <string-array name="length">
+        <item>Километр</item>
+        <item>Метр</item>
+        <item>Дециметр</item>
+        <item>Сантиметр</item>
+        <item>Миллиметр</item>
+        <item>Футы</item>
+        <item>Дюймы</item>
+    </string-array>
+    <string-array name="time">
+        <item>День</item>
+        <item>Час</item>
+        <item>Минута</item>
+        <item>Секунда</item>
+        <item>Миллисекунда</item>
+    </string-array>
+    <string-array name="square">
+        <item name="km_2">км²</item>
+        <item name="m_2">м²</item>
+        <item name="ha">Гектар</item>
+        <item name="a">Ар</item>
+    </string-array>
+    <string-array name="speed" >
+        <item name="m_s">м/c</item>
+        <item name="km_h">км/ч</item>
+        <item name="km_s">км/c</item>
+        <item name="i_s">д/с</item>
+        <item name="f_s">ф/с</item>
+    </string-array>
+
+</resources>

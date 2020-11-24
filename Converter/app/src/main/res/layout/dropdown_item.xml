@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:background="@color/black">-->
+
+<!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;    android:id="@+id/imageView"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_width="50dp"&ndash;&gt;-->
+<!--    android:layout_height="50dp"-->
+<!--    android:padding="5dp"-->
+<!--    android:src="@drawable/ic_launcher" />&lt;!&ndash;Make sure image is present in Drawable folder&ndash;&gt;-->
+<CheckedTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text2"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:textColor="@color/orange"
+    android:layout_gravity="center"
+    android:textSize="20sp"
+    android:padding="5dp"
+    android:background="@drawable/gradient_spinner"/>
+<!--</LinearLayout>-->
