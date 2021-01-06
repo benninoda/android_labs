@@ -106,30 +106,41 @@ public class TimerFragment extends Fragment {
 
         btnPrevTimer = view.findViewById(R.id.to_previous_stage);
         btnPrevTimer.setOnClickListener(view1 -> {
-            countDownTimer.cancel();
-            timerDetailViewModel.currentStage -= 1;
-            timerDetailViewModel.currentTime = timerDetailViewModel
-                                                .sequenceStages
-                                                .get(timerDetailViewModel.currentStage);
-            timerDetailViewModel.currentText.setValue(timerDetailViewModel
-                                                        .sequenceText
-                                                        .get(timerDetailViewModel.currentStage));
-            startTimer(view);
+            if (timerDetailViewModel.currentStage != 0) {
+                if (timerDetailViewModel.isRunning)
+                    countDownTimer.cancel();
+                timerDetailViewModel.currentStage -= 1;
+                timerDetailViewModel.currentTime = timerDetailViewModel
+                        .sequenceStages
+                        .get(timerDetailViewModel.currentStage);
+                timerDetailViewModel.currentText.setValue(timerDetailViewModel
+                        .sequenceText
+                        .get(timerDetailViewModel.currentStage));
+                currentTextTextView.setText(timerDetailViewModel.currentText.getValue());
+                tvTimer.setText(String.valueOf(timerDetailViewModel.currentTime));
+                if (timerDetailViewModel.isRunning)
+                    startTimer(view);
+            }
 
         });
 
         btnNextTimer = view.findViewById(R.id.to_next_stage);
         btnNextTimer.setOnClickListener(view1 -> {
-            countDownTimer.cancel();
-            timerDetailViewModel.currentStage += 1;
-            timerDetailViewModel.currentTime = timerDetailViewModel
-                    .sequenceStages
-                    .get(timerDetailViewModel.currentStage);
-            timerDetailViewModel.currentText.setValue(timerDetailViewModel
-                                                        .sequenceText
-                                                        .get(timerDetailViewModel.currentStage));
-            currentTextTextView.setText(timerDetailViewModel.currentText.getValue());
-            startTimer(view);
+            if (timerDetailViewModel.currentStage < timerDetailViewModel.stages - 1) {
+                if (timerDetailViewModel.isRunning)
+                    countDownTimer.cancel();
+                timerDetailViewModel.currentStage += 1;
+                timerDetailViewModel.currentTime = timerDetailViewModel
+                        .sequenceStages
+                        .get(timerDetailViewModel.currentStage);
+                timerDetailViewModel.currentText.setValue(timerDetailViewModel
+                        .sequenceText
+                        .get(timerDetailViewModel.currentStage));
+                currentTextTextView.setText(timerDetailViewModel.currentText.getValue());
+                tvTimer.setText(String.valueOf(timerDetailViewModel.currentTime));
+                if (timerDetailViewModel.isRunning)
+                    startTimer(view);
+            }
         });
 
         RecyclerView recyclerView = view.findViewById(R.id.sequence_list);
@@ -160,8 +171,9 @@ public class TimerFragment extends Fragment {
 
             public void onFinish() {
                 timerDetailViewModel.currentStage += 1;
-                if (timerDetailViewModel.currentStage < 0)
+                if (timerDetailViewModel.currentStage < 0) {
                     timerDetailViewModel.currentStage = 0;
+                }
                 if (timerDetailViewModel.currentStage == timerDetailViewModel.stages) {
                     timerDetailViewModel.currentText.setValue((String) getText(R.string.complete));
                     currentTextTextView.setText(timerDetailViewModel.currentText.getValue());
@@ -175,15 +187,18 @@ public class TimerFragment extends Fragment {
                     if (timerDetailViewModel.currentStage == timerDetailViewModel.stages - 1) {
                         timerDetailViewModel.nextText.setValue("");
                     }
-                    else
+                    else {
                         timerDetailViewModel.nextText
                                 .setValue(timerDetailViewModel.sequenceText.get(timerDetailViewModel.currentStage + 1));
-                    if (timerDetailViewModel.currentStage == 0)
+                    }
+                    if (timerDetailViewModel.currentStage == 0) {
                         timerDetailViewModel.previousText.setValue("");
-                    else
+                    }
+                    else {
                         timerDetailViewModel.previousText.setValue(timerDetailViewModel
                                 .sequenceText
                                 .get(timerDetailViewModel.currentStage - 1));
+                    }
                     timerDetailViewModel.currentTime = (long) timerDetailViewModel.sequenceStages.get(timerDetailViewModel.currentStage);
                     currentTextTextView.setText(timerDetailViewModel.currentText.getValue());
                     startTimer(view);

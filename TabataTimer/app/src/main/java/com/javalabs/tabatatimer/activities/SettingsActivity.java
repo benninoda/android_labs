@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.ViewModelProviders;
@@ -35,42 +34,30 @@ public class SettingsActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
         settingsFragment = new SettingsFragment();
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.settings, settingsFragment)
-                    .commit();
-        }
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.settings, settingsFragment)
+                .commit();
     }
-
-
-//    @Override
-//    public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState){
-//        super.onViewCreated(view, savedInstanceState);
-//
-//    }
 
 
     @Override
     protected void onResume() {
         themePreference = (SwitchPreferenceCompat)settingsFragment.findPreference("theme");
-        Log.e("D", "ny pls" + themePreference);
         themePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object o) {
+                Log.e("D", "pref pls " + preference);
+                Log.e("D", "obj pls " + o);
                 if ((boolean) o) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//                    editor.putBoolean("mode", true);
+                    editor.putBoolean("mode", true);
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//                    editor.putBoolean("mode", false);
+                    editor.putBoolean("mode", false);
                 }
-//                editor.apply();
-                return false;
+                editor.apply();
+                return true;
             }
         });
 
