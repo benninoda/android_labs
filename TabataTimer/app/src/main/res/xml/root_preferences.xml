@@ -1,0 +1,30 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--    <include layout="@layout/toolbar_settings_fragment" />-->
+
+    <PreferenceCategory app:title="@string/theme_header">
+
+        <SwitchPreferenceCompat
+            android:key="theme"
+            app:title="@string/themePrefTitle"
+            app:defaultValue="false"/>
+
+        <ListPreference
+            android:key="lang"
+            android:entries="@array/langNames"
+            android:entryValues="@array/langValues"
+            android:summary="Выбор языка"
+            android:title="@string/langPrefTitle"
+            app:defaultValue="ru"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/data_header">
+        <Preference
+            android:key="clear"
+            app:summary="Очистка всех данных приложения"
+            app:title="Очистить данные" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

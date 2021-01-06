@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@drawable/item"
+    app:barrierMargin="20dp"
+    android:layout_marginTop="20dp"
+    android:id="@+id/list_number"
+    >
+
+    <TextView
+        android:id="@+id/item_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        style="@style/item_text_view"
+        android:layout_weight="1"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        style="@style/item_text_view"
+        android:layout_weight="2"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <ImageButton
+        android:id="@+id/button_play"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_play_48"/>
+
+    <TextView
+        android:id="@+id/textViewOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:background="@color/transparent"
+        android:text="⋮"
+        android:textSize="18pt"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+</LinearLayout>

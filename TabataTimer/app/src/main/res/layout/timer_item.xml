@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@drawable/item"
+    app:barrierMargin="10dp"
+    android:layout_marginTop="20dp"
+    android:id="@+id/list_number">
+
+    <TextView
+        android:id="@+id/sequence_item_label"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        style="@style/item_text_view"
+        android:textAppearance="?attr/textAppearanceListItem">
+    </TextView>
+</LinearLayout>

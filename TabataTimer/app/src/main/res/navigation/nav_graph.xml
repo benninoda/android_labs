@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/timerSequenceFragment">
+
+    <fragment
+        android:id="@+id/timerSequenceFragment"
+        android:name="com.javalabs.tabatatimer.TimerSequenceFragment"
+        android:label="TimerSequenceFragment"
+        tools:layout="@layout/fragment_timer_list">
+        <action
+            android:id="@+id/action_timerSequenceFragment_to_editTimerFragment"
+            app:destination="@id/editTimerFragment" />
+        <action
+            android:id="@+id/action_timerSequenceFragment_to_timerFragment"
+            app:destination="@id/timerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTimerFragment"
+        android:name="com.javalabs.tabatatimer.EditTimerFragment"
+        android:label="fragment_edit_timer"
+        tools:layout="@layout/fragment_edit_timer" >
+        <action
+            android:id="@+id/action_editTimerFragment_to_timerSequenceFragment"
+            app:destination="@id/timerSequenceFragment" />
+        <argument
+            android:name="mode"
+            app:argType="string" />
+        <argument
+            android:name="itemId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="com.javalabs.tabatatimer.TimerFragment"
+        android:label="fragment_timer"
+        tools:layout="@layout/fragment_timer" >
+        <argument
+            android:name="timerId"
+            app:argType="integer"/>
+    </fragment>
+</navigation>
