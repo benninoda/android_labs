@@ -1,8 +1,11 @@
 package com.javalabs.tabatatimer;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,20 +17,25 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.javalabs.tabatatimer.adapters.MySimpleRecycleViewAdapter;
 import com.javalabs.tabatatimer.database.enities.Timer;
 import com.javalabs.tabatatimer.models.TimerSequenceModel;
+import com.javalabs.tabatatimer.utils.IVibration;
+import com.javalabs.tabatatimer.utils.SimpleVibration;
+import com.javalabs.tabatatimer.utils.VibrationBuild;
 import com.javalabs.tabatatimer.viewmodel.TimerDetailViewModel;
 import com.javalabs.tabatatimer.viewmodel.TimerViewModel;
 
 import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link TimerFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TimerFragment extends Fragment {
+public class TimerFragment extends Fragment{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,6 +48,8 @@ public class TimerFragment extends Fragment {
     ImageButton btnPrevTimer;
     ImageButton btnNextTimer;
     CountDownTimer countDownTimer;
+    IVibration iVibration;
+    Vibrator vibrator;
     ArrayList<TimerSequenceModel> timerSequenceModels;
 
     public TimerFragment() {
@@ -61,6 +71,12 @@ public class TimerFragment extends Fragment {
             itemId = getArguments().getInt("timerId");
         }
         timerDetailViewModel = ViewModelProviders.of(getActivity()).get(TimerDetailViewModel.class);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            iVibration = new VibrationBuild();
+        } else {
+            iVibration = new SimpleVibration();
+        }
+        vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     @Override
@@ -167,6 +183,9 @@ public class TimerFragment extends Fragment {
             @SuppressLint("DefaultLocale")
             public void onTick(long millisUntilFinished) {
                 timerDetailViewModel.currentTickText.setValue(millisUntilFinished / 1000);
+                if (millisUntilFinished / 1000 == 2 || millisUntilFinished / 1000 == 1 ||
+                        millisUntilFinished / 1000 == 0)
+                    iVibration.vibro(vibrator);
                 tvTimer.setText(String.valueOf(millisUntilFinished / 1000));
             }
 
@@ -209,5 +228,4 @@ public class TimerFragment extends Fragment {
         }.start();
 
     }
-
 }

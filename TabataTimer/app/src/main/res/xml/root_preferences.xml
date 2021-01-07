@@ -18,6 +18,15 @@
             android:summary="@string/lang_pref_summury"
             android:title="@string/langPrefTitle"
             app:defaultValue="ru"/>
+
+        <ListPreference
+            android:key="fontSize"
+            android:entries="@array/fontSizeNames"
+            android:entryValues="@array/fontSizeValues"
+            android:title="@string/font_size_dialog_title"
+            app:dialogTitle="@string/font_size_dialog_title"
+            android:summary="@string/font_pref_summury"
+            app:defaultValue="2"/>
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/data_header">

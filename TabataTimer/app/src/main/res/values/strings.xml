@@ -22,8 +22,8 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Следующий</string>
     <string name="previous">Предыдущий</string>
-    <string name="create_fragment_toolbar_title">Create timer</string>
-    <string name="edit_fragment_toolbar_title">Создайте таймер</string>
+    <string name="create_fragment_toolbar_title">Создайте таймер</string>
+    <string name="edit_fragment_toolbar_title">Обновите таймер</string>
     <string name="timer_sequence_fragment_toolbar_title">Тренировки</string>
     <string name="dialogInputTextView">Введите название</string>
     <string name="dialogInputEditText">Введите текст здесь..</string>
@@ -66,4 +66,9 @@
     <string name="rest_read">\"\nВремя подхода отдыха - \"</string>
     <string name="cooldown_read">\"\nВремя отдыха между сетами - \"</string>
     <string name="all_time_read">\"\nОбщее время работы - \"</string>
+    <string name="small">Мелкий</string>
+    <string name="medium">Средний</string>
+    <string name="large">Крупный</string>
+    <string name="font_size_dialog_title">Размер шрифта</string>
+    <string name="font_pref_summury">Выберите размер шрифта</string>
 </resources>

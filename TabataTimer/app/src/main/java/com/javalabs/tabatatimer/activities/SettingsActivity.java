@@ -4,11 +4,14 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
@@ -86,6 +89,47 @@ public class SettingsActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        final ListPreference fontSizePreference = settingsFragment.findPreference("fontSize");
+        assert fontSizePreference != null;
+
+        fontSizePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                float size_coef = 0;
+                switch (fontSizePreference.findIndexOfValue(newValue.toString())) {
+                    case 0: {
+                        size_coef = 0.85f;
+                        break;
+                    }
+                    case 1: {
+                        size_coef = 1.0f;
+                        break;
+                    }
+                    case 2: {
+                        size_coef = 1.15f;
+                        break;
+                    }
+                }
+
+                editor.putFloat("sizeCoef", size_coef);
+                editor.apply();
+
+                Configuration configuration = getResources().getConfiguration();
+                configuration.fontScale = size_coef;
+
+                DisplayMetrics metrics = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(metrics);
+                metrics.scaledDensity = configuration.fontScale * metrics.density;
+                getBaseContext().getResources().updateConfiguration(configuration, metrics);
+
+                finish();
+                startActivity(new Intent(SettingsActivity.this, SettingsActivity.this.getClass()));
+                return true;
+
+            }
+        });
+
         super.onResume();
     }
 

@@ -12,10 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:gravity="center">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="85dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
             <ImageButton
@@ -23,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_work_up_48"/>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -65,7 +67,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="85dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
             <ImageButton
@@ -73,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_workout_48"/>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -115,7 +117,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="85dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
             <ImageButton
@@ -123,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_rest_48"/>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -165,7 +167,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="85dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
             <ImageButton
@@ -173,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_cooldown_24"/>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -215,7 +217,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="85dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
             <ImageButton
@@ -223,7 +225,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_cycle_48"/>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -265,7 +267,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="85dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
             <ImageButton
@@ -273,7 +275,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_round_repeat_24"/>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 

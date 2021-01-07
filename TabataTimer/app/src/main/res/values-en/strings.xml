@@ -45,7 +45,7 @@
     <string name="read_label">Read</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="themePrefTitle">Dark theme</string>
-    <string name="langPrefTitle">Язык</string>
+    <string name="langPrefTitle">Language</string>
     <string name="edit_symbol">⋮</string>
     <string name="lang_pref_summury">Choose language</string>
     <string name="clear_pref_summury">Delete all data</string>
@@ -63,4 +63,9 @@
     <string name="rest_read">\nRest time - </string>
     <string name="cooldown_read">\nCooldown time - </string>
     <string name="all_time_read">\nAll workout time - </string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="font_size_dialog_title">Font size</string>
+    <string name="font_pref_summury">Choose font size</string>
 </resources>

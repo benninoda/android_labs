@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv"
             android:layout_gravity="center"
-            android:textSize="26pt"
+            android:textSize="48pt"
             android:textColorHighlight="@color/purple_200"/>
 
         <LinearLayout

@@ -8,4 +8,16 @@
         <item>ru</item>
         <item>en</item>
     </string-array>
+
+    <string-array name="fontSizeNames">
+        <item>@string/small</item>
+        <item>@string/medium</item>
+        <item>@string/large</item>
+    </string-array>
+
+    <string-array name="fontSizeValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>

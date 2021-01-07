@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.javalabs.tabatatimer">
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".helper.TabataTimerApplication"
@@ -9,6 +10,7 @@
         android:roundIcon="@drawable/ic_tabata"
         android:supportsRtl="true"
         android:theme="@style/Theme.TabataTimer.Launcher">
+
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings"

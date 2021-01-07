@@ -14,32 +14,41 @@
         android:text="@string/create_fragment_toolbar_title"
         android:textSize="30sp"
         android:textColor="@color/white"
+        android:layout_marginRight="30dp"
         android:background="#00FFFFFF"
         android:layout_marginEnd="20dp"/>
 
-    <ImageButton
-        android:id="@+id/edit_name_button"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#00FFFFFF"
-        android:src="@drawable/ic_name_edit_24"
-        android:padding="5dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/transparent"
+        >
 
-    <ImageButton
-        android:id="@+id/edit_color_button"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#00FFFFFF"
-        android:src="@drawable/ic_palette_24"
-        android:padding="5dp"/>
+        <ImageButton
+            android:id="@+id/edit_name_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_name_edit_24"
+            android:padding="5dp"/>
 
-    <ImageButton
-        android:id="@+id/ok_button"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#00FFFFFF"
-        android:src="@drawable/ic_ok_24"
-        android:padding="5dp"/>
+        <ImageButton
+            android:id="@+id/edit_color_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_palette_24"
+            android:padding="5dp"/>
+
+        <ImageButton
+            android:id="@+id/ok_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_ok_24"
+            android:padding="5dp"/>
+    </LinearLayout>
 
 
 </android.widget.Toolbar>
