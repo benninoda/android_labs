@@ -56,14 +56,6 @@
                 />
 
         </LinearLayout>
-<!--        <ImageButton-->
-<!--            android:id="@+id/start_timer_button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:src="@drawable/ic_play_72"-->
-<!--            android:layout_gravity="center"/>-->
-
-<!--        </LinearLayout>-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sequence_list"
             android:name="com.javalabs.tabatatimer.TimerFragment"
@@ -75,6 +67,7 @@
             tools:context=".TimerFragment"
             tools:listitem="@layout/timer_item" >
         </androidx.recyclerview.widget.RecyclerView>
+
 
 
     </LinearLayout>

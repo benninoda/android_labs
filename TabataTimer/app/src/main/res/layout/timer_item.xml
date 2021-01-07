@@ -12,8 +12,11 @@
     <TextView
         android:id="@+id/sequence_item_label"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
         style="@style/item_text_view"
+        android:padding="0dp"
+        android:textSize="9pt"
         android:textAppearance="?attr/textAppearanceListItem">
     </TextView>
 </LinearLayout>

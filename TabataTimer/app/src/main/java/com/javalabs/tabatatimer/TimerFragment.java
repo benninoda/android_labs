@@ -2,6 +2,8 @@ package com.javalabs.tabatatimer;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -51,6 +53,9 @@ public class TimerFragment extends Fragment{
     IVibration iVibration;
     Vibrator vibrator;
     ArrayList<TimerSequenceModel> timerSequenceModels;
+    final int MAX_STREAMS = 5;
+
+    SoundPool sp;
 
     public TimerFragment() {
         // Required empty public constructor
@@ -77,6 +82,7 @@ public class TimerFragment extends Fragment{
             iVibration = new SimpleVibration();
         }
         vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+
     }
 
     @Override
@@ -84,6 +90,7 @@ public class TimerFragment extends Fragment{
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         // Inflate the layout for this fragment
+
         TimerViewModel timerViewModel = ViewModelProviders.of(getActivity()).get(TimerViewModel.class);
         timerViewModel.findById(itemId).observe(getViewLifecycleOwner(), timer -> {
             currentTimer = timer;
@@ -96,6 +103,14 @@ public class TimerFragment extends Fragment{
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 //        Log.e("D", "OnViewCreated");
+        AudioAttributes attributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+        sp = new SoundPool.Builder()
+                .setAudioAttributes(attributes)
+                .build();
+        sp.load(getContext(), R.raw.sound, 1);
         tvTimer = view.findViewById(R.id.tv);
         currentTextTextView = view.findViewById(R.id.current_text_text_view);
         btnStartTimer = view.findViewById(R.id.start_timer_button);
@@ -190,6 +205,7 @@ public class TimerFragment extends Fragment{
             }
 
             public void onFinish() {
+                sp.play(1, 1.0F, 1.0F, 1, 0, 1.0F);
                 timerDetailViewModel.currentStage += 1;
                 if (timerDetailViewModel.currentStage < 0) {
                     timerDetailViewModel.currentStage = 0;

@@ -71,4 +71,5 @@
     <string name="large">Крупный</string>
     <string name="font_size_dialog_title">Размер шрифта</string>
     <string name="font_pref_summury">Выберите размер шрифта</string>
+    <string name="back">Назад</string>
 </resources>
