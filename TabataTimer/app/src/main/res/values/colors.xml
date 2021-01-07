@@ -11,5 +11,6 @@
     <color name="colorPrimaryLight">#44BDFF</color>
     <color name="colorTextPrimary">#001D42</color>
     <color name="transparent">#00FFFFFF</color>
-    <color name="colorAccent">#FF5B5B</color>
+    <color name="colorAccent">#44BDFF</color>
+    <color name="colorHighLight">#4A5259</color>
 </resources>

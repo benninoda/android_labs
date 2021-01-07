@@ -2,7 +2,6 @@ package com.javalabs.tabatatimer;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,11 +58,6 @@ public class TimerSequenceFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        if (getArguments() != null) {
-//            // TODO: Customize parameters
-//            int mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-//        }
-        Log.e("D", "ON CREATE LIST FRAGMENT");
     }
 
     @Override
@@ -131,18 +125,11 @@ public class TimerSequenceFragment extends Fragment {
 
         mItemTouchHelper.attachToRecyclerView(recyclerView);
 
-        // Get a new or existing ViewModel from the ViewModelProvider.
-
-        // Add an observer on the LiveData returned by getAlphabetizedWords.
-        // The onChanged() method fires when the observed data changes and the activity is
-        // in the foreground.
-//        Log.e("D", "lenght " + timerViewModel.getAllTimers().getValue().size());
 
         timerViewModel.getAllTimers().observe(getViewLifecycleOwner(), new Observer<List<Timer>>() {
             @Override
             public void onChanged(@Nullable final List<Timer> timers) {
                 // Update the cached copy of the words in the adapter.
-                Log.e("D", "timer " + timers.size());
                 adapter.setWords(timers);
             }
         });

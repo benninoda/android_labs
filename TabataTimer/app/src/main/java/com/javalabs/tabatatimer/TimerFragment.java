@@ -22,14 +22,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.javalabs.tabatatimer.adapters.MySimpleRecycleViewAdapter;
 import com.javalabs.tabatatimer.database.enities.Timer;
-import com.javalabs.tabatatimer.models.TimerSequenceModel;
 import com.javalabs.tabatatimer.utils.IVibration;
 import com.javalabs.tabatatimer.utils.SimpleVibration;
 import com.javalabs.tabatatimer.utils.VibrationBuild;
 import com.javalabs.tabatatimer.viewmodel.TimerDetailViewModel;
 import com.javalabs.tabatatimer.viewmodel.TimerViewModel;
-
-import java.util.ArrayList;
 
 
 /**
@@ -52,13 +49,12 @@ public class TimerFragment extends Fragment{
     CountDownTimer countDownTimer;
     IVibration iVibration;
     Vibrator vibrator;
-    ArrayList<TimerSequenceModel> timerSequenceModels;
-    final int MAX_STREAMS = 5;
 
     SoundPool sp;
 
     public TimerFragment() {
         // Required empty public constructor
+
     }
 
     // TODO: Rename and change types and number of parameters
@@ -175,6 +171,8 @@ public class TimerFragment extends Fragment{
             }
         });
 
+
+
         RecyclerView recyclerView = view.findViewById(R.id.sequence_list);
 
         final MySimpleRecycleViewAdapter adapter = new MySimpleRecycleViewAdapter(getContext());
@@ -189,10 +187,12 @@ public class TimerFragment extends Fragment{
         timerDetailViewModel.setSequence(currentTimer);
         timerDetailViewModel.setTimerSequenceModels();
         currentTextTextView.setText(getString(timerDetailViewModel.sequenceText.get(timerDetailViewModel.currentStage)));
+        tvTimer.setText(String.valueOf(timerDetailViewModel.sequenceStages.get(timerDetailViewModel.currentStage)));
         timerDetailViewModel.isInit = true;
     }
 
     private void startTimer(View view) {
+
         countDownTimer = new CountDownTimer(timerDetailViewModel.currentTime * 1000, 1000) {
 
             @SuppressLint("DefaultLocale")

@@ -19,6 +19,7 @@ public class TimerSequenceModel {
         this.stageTime = stageTime;
     }
 
+
     public int getId() {
         return id;
     }

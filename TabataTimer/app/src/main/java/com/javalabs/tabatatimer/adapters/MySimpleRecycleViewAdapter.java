@@ -38,6 +38,7 @@ public class MySimpleRecycleViewAdapter
         if (mValues != null){
             TimerSequenceModel current = mValues.get(position);
             holder.textView.setText(String.format("%d. %s: %d", current.getId(), mContext.getString(current.getName()), current.getStageTime()));
+
         }
     }
 
@@ -54,6 +55,7 @@ public class MySimpleRecycleViewAdapter
         private SimpleViewHolder(View itemView){
             super(itemView);
             textView =  itemView.findViewById(R.id.sequence_item_label);
+
         }
     }
 
