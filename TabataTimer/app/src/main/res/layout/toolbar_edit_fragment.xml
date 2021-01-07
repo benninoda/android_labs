@@ -8,9 +8,10 @@
 
 
     <TextView
+        android:id="@+id/edit_fragment_label"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="@string/edit_fragment_toolbar_title"
+        android:text="@string/create_fragment_toolbar_title"
         android:textSize="30sp"
         android:textColor="@color/white"
         android:background="#00FFFFFF"

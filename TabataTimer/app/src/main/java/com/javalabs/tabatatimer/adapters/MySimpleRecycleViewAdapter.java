@@ -37,7 +37,7 @@ public class MySimpleRecycleViewAdapter
     public void onBindViewHolder(@NonNull SimpleViewHolder holder, int position) {
         if (mValues != null){
             TimerSequenceModel current = mValues.get(position);
-            holder.textView.setText(current.getId() + ". " + current.getName() + ": " + current.getStageTime());
+            holder.textView.setText(String.format("%d. %s: %d", current.getId(), mContext.getString(current.getName()), current.getStageTime()));
         }
     }
 

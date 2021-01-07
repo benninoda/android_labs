@@ -97,10 +97,10 @@ public class TimerSequenceFragment extends Fragment {
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
 
                 MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
-                        .setTitle("Delete?")
-                        .setMessage("Are you sure want to delete this file?")
+                        .setTitle(getString(R.string.qsn_delete))
+                        .setMessage(getString(R.string.delete_message))
                         .setCancelable(false)
-                        .setPositiveButton("Delete", R.drawable.ic_delete_24, new MaterialDialog.OnClickListener() {
+                        .setPositiveButton(getString(R.string.deleteItem), R.drawable.ic_delete_24, new MaterialDialog.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int which) {
                                 timerViewModel.deleteTimer(Objects.requireNonNull(timerViewModel
@@ -112,7 +112,7 @@ public class TimerSequenceFragment extends Fragment {
                             }
 
                         })
-                        .setNegativeButton("Cancel", R.drawable.ic_cancel_24, new MaterialDialog.OnClickListener() {
+                        .setNegativeButton(getString(R.string.dialog_cancel), R.drawable.ic_cancel_24, new MaterialDialog.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int which) {
                                 dialogInterface.dismiss();

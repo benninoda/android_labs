@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.javalabs.tabatatimer.R;
 import com.javalabs.tabatatimer.database.enities.Timer;
 import com.javalabs.tabatatimer.models.TimerSequenceModel;
 
@@ -19,7 +20,7 @@ public class TimerDetailViewModel extends ViewModel {
     TimerSequenceModel timerSequenceModel;
 
     public ArrayList<Integer> sequenceStages;
-    public ArrayList<String> sequenceText;
+    public ArrayList<Integer> sequenceText;
     public MutableLiveData<ArrayList<TimerSequenceModel>> timerSequenceModels = new MutableLiveData<>();
     private ArrayList<TimerSequenceModel> tempListTimerStages;
     public int stages;
@@ -51,16 +52,16 @@ public class TimerDetailViewModel extends ViewModel {
 
     public void setSequence(Timer currentTimer){
         sequenceStages.add(currentTimer.warmup);
-        sequenceText.add("Подготовка");
+        sequenceText.add(R.string.warm_up_text_view);
         for (int i = 0; i < currentTimer.repeat; i++){
             for (int j = 0; j < currentTimer.cycle; j++) {
                 sequenceStages.add(currentTimer.workout);
-                sequenceText.add("Работа");
+                sequenceText.add(R.string.work_out_text_view);
                 sequenceStages.add(currentTimer.rest);
-                sequenceText.add("Отдых");
+                sequenceText.add(R.string.rest_text_view);
             }
             sequenceStages.add(currentTimer.cooldown);
-            sequenceText.add("Успокоиться");
+            sequenceText.add(R.string.cooldown_text_view);
         }
     }
 

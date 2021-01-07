@@ -60,7 +60,7 @@ public class MyTimerSequenceRecyclerViewAdapter
         if (mValues != null) {
             Timer current = mValues.get(position);
             holder.timerItemView.setText(current.timer_name);
-            holder.idTimerItemView.setText(String.valueOf(current.uid));
+//            holder.idTimerItemView.setText(String.valueOf(current.uid));
             Log.e("D", String.valueOf(position));
             int clr = 0;
             if (current.color != null){
@@ -94,13 +94,13 @@ public class MyTimerSequenceRecyclerViewAdapter
                             dialog.setContentView(R.layout.dialog_view);
                             TextView textView = dialog.findViewById(R.id.dialog_content);
                             StringBuilder content = new StringBuilder();
-                            content.append("Количество повторений - ").append(current.repeat);
-                            content.append("\nКоличество циклов - ").append(current.cycle);
-                            content.append("\nВремя подготовки - ").append(current.warmup);
-                            content.append("\nВремя подхода работы -").append(current.workout);
-                            content.append("\nВремя подхода отдыха - ").append(current.rest);
-                            content.append("\nВремя отдыха между сетами - ").append(current.cooldown);
-                            content.append("\nОбщее время работы - ").append(current.workout * current.cycle * current.repeat);
+                            content.append(mContext.getString(R.string.repeats_read)).append(current.repeat);
+                            content.append(mContext.getString(R.string.cycles_read)).append(current.cycle);
+                            content.append(mContext.getString(R.string.warmup_read)).append(current.warmup);
+                            content.append(mContext.getString(R.string.workout_read)).append(current.workout);
+                            content.append(mContext.getString(R.string.rest_read)).append(current.rest);
+                            content.append(mContext.getString(R.string.cooldown_read)).append(current.cooldown);
+                            content.append(mContext.getString(R.string.all_time_read)).append(current.workout * current.cycle * current.repeat);
                             textView.setText(content);
                             dialog.show();
                             break;
@@ -148,7 +148,7 @@ public class MyTimerSequenceRecyclerViewAdapter
 
     static class TimerViewHolder extends RecyclerView.ViewHolder
         implements ItemTouchHelperViewHolder {
-        private final TextView idTimerItemView;
+//        private final TextView idTimerItemView;
         private final TextView timerItemView;
         private final LinearLayout linearLayoutItem;
         private final Drawable solidColorBackground;
@@ -157,7 +157,7 @@ public class MyTimerSequenceRecyclerViewAdapter
 
         private TimerViewHolder(View itemView) {
             super(itemView);
-            idTimerItemView = itemView.findViewById(R.id.item_number);
+//            idTimerItemView = itemView.findViewById(R.id.item_number);
             timerItemView = itemView.findViewById(R.id.content);
             linearLayoutItem = itemView.findViewById(R.id.list_number);
             solidColorBackground = itemView.getBackground();

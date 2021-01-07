@@ -19,7 +19,8 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="edit_fragment_toolbar_title">Create</string>
+    <string name="create_fragment_toolbar_title">Create timer</string>
+    <string name="edit_fragment_toolbar_title">Edit timer</string>
     <string name="timer_sequence_fragment_toolbar_title">Workouts</string>
     <string name="dialogInputTextView">Input name</string>
     <string name="dialogInputEditText">Input text here..</string>
@@ -45,4 +46,21 @@
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="themePrefTitle">Dark theme</string>
     <string name="langPrefTitle">Язык</string>
+    <string name="edit_symbol">⋮</string>
+    <string name="lang_pref_summury">Choose language</string>
+    <string name="clear_pref_summury">Delete all data</string>
+    <string name="clear_pref">Clear data</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_ok">OK</string>
+    <string name="newTimer">New timer</string>
+    <string name="qsn_delete">Delete?</string>
+    <string name="delete_message">Are you sure want to delete this timer?</string>
+    <string name="deleteItem">Delete</string>
+    <string name="repeats_read">Repeat number - </string>
+    <string name="cycles_read">\nCycles number - </string>
+    <string name="warmup_read">\nWarm up time - </string>
+    <string name="workout_read">\nWorkout time -</string>
+    <string name="rest_read">\nRest time - </string>
+    <string name="cooldown_read">\nCooldown time - </string>
+    <string name="all_time_read">\nAll workout time - </string>
 </resources>

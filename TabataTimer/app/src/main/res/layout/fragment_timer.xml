@@ -17,30 +17,20 @@
             android:layout_height="wrap_content"
             android:id="@+id/current_text_text_view"
             android:layout_gravity="center"
-            android:textSize="13pt"/>
+            android:textSize="18pt"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv"
             android:layout_gravity="center"
-            android:textSize="13pt"/>
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal">-->
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/start_timer_button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:src="@drawable/ic_play_72"-->
-<!--            android:layout_gravity="center"/>-->
+            android:textSize="26pt"
+            android:textColorHighlight="@color/purple_200"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
             <ImageButton
                 android:id="@+id/to_previous_stage"

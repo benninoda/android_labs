@@ -1,6 +1,5 @@
 package com.javalabs.tabatatimer;
 
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -57,6 +57,7 @@ public class EditTimerFragment extends Fragment {
     EditText editTextCooldown;
     EditText editTextRepeat;
     EditText editTextCycle;
+    TextView pageLabel;
 
 
     private TimerViewModel timerViewModel;
@@ -142,6 +143,7 @@ public class EditTimerFragment extends Fragment {
         editTextCooldown = view.findViewById(R.id.cooldown_edit_text);
         editTextCycle = view.findViewById(R.id.cycle_edit_text);
         editTextRepeat = view.findViewById(R.id.repeat_edit_text);
+        pageLabel = view.findViewById(R.id.edit_fragment_label);
 
         btnWorkupMinus.setOnClickListener(view1 -> changeEditTextMinus(editTextWorkup));
         btnWorkupPlus.setOnClickListener(view1 -> changeEditTextPlus(editTextWorkup));
@@ -158,8 +160,7 @@ public class EditTimerFragment extends Fragment {
 
         if (mode.equals("edit")){
             timerViewModel.findById(itemId).observe(getViewLifecycleOwner(), timer1 -> {
-//                Log.e("D", "lol kek" + String.valueOf());
-                Log.e("D", "lol kek" + String.valueOf(timer1 == null));
+                pageLabel.setText(getText(R.string.edit_fragment_toolbar_title));
                 editTextWorkup.setText(String.valueOf(timer1.warmup));
                 editTextWorkout.setText(String.valueOf(timer1.workout));
                 editTextRest.setText(String.valueOf(timer1.rest));
@@ -226,17 +227,9 @@ public class EditTimerFragment extends Fragment {
         final EditText editText = promptView.findViewById(R.id.edittext);
         // setup a dialog window
         alertDialogBuilder.setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        name_tmr = String.valueOf(editText.getText());
-                    }
-                })
-                .setNegativeButton("Cancel",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                .setPositiveButton(R.string.dialog_ok, (dialog, id) -> name_tmr = String.valueOf(editText.getText()))
+                .setNegativeButton(R.string.dialog_cancel,
+                        (dialog, id) -> dialog.cancel());
 
         // create an alert dialog
         AlertDialog alert = alertDialogBuilder.create();
@@ -244,7 +237,7 @@ public class EditTimerFragment extends Fragment {
     }
 
     protected void createNewTimer(){
-        name_tmr = name_tmr.equals("") ? "Новый таймер" : name_tmr;
+        name_tmr = name_tmr.equals("") ? getString(R.string.newTimer) : name_tmr;
         timer = new Timer(name_tmr, color_tmr, Integer.parseInt(String.valueOf(editTextWorkup.getText())),
                 Integer.parseInt(String.valueOf(editTextWorkout.getText())),
                 Integer.parseInt(String.valueOf(editTextRest.getText())),

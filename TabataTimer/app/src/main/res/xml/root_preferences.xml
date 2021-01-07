@@ -15,7 +15,7 @@
             android:key="lang"
             android:entries="@array/langNames"
             android:entryValues="@array/langValues"
-            android:summary="Выбор языка"
+            android:summary="@string/lang_pref_summury"
             android:title="@string/langPrefTitle"
             app:defaultValue="ru"/>
     </PreferenceCategory>
@@ -23,8 +23,8 @@
     <PreferenceCategory app:title="@string/data_header">
         <Preference
             android:key="clear"
-            app:summary="Очистка всех данных приложения"
-            app:title="Очистить данные" />
+            app:summary="@string/clear_pref_summury"
+            app:title="@string/clear_pref" />
     </PreferenceCategory>
 
 </PreferenceScreen>

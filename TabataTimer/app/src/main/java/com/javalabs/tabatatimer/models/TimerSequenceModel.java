@@ -2,20 +2,20 @@ package com.javalabs.tabatatimer.models;
 
 public class TimerSequenceModel {
     int id;
-    String name;
+    int nameRes;
     long stageTime;
 
     public TimerSequenceModel(){}
 
-    public TimerSequenceModel(int id, String name, long stageTime){
+    public TimerSequenceModel(int id, int nameRes, long stageTime){
         this.id = id;
-        this.name = name;
+        this.nameRes = nameRes;
         this.stageTime = stageTime;
     }
 
-    public void setValues(int id, String name, long stageTime){
+    public void setValues(int id, int nameRes, long stageTime){
         this.id = id;
-        this.name = name;
+        this.nameRes = nameRes;
         this.stageTime = stageTime;
     }
 
@@ -23,8 +23,8 @@ public class TimerSequenceModel {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public int getName() {
+        return nameRes;
     }
 
     public long getStageTime() {

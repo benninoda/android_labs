@@ -20,9 +20,9 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
+    <string name="next">Следующий</string>
+    <string name="previous">Предыдущий</string>
+    <string name="create_fragment_toolbar_title">Create timer</string>
     <string name="edit_fragment_toolbar_title">Создайте таймер</string>
     <string name="timer_sequence_fragment_toolbar_title">Тренировки</string>
     <string name="dialogInputTextView">Введите название</string>
@@ -49,4 +49,21 @@
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="themePrefTitle">Тёмная тема</string>
     <string name="langPrefTitle">Язык</string>
+    <string name="edit_symbol">⋮</string>
+    <string name="lang_pref_summury">Выбор языка</string>
+    <string name="clear_pref_summury">Очистить все данные</string>
+    <string name="clear_pref">Очистить данные</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_ok">Ок</string>
+    <string name="newTimer">Новый таймер</string>
+    <string name="qsn_delete">Удалить?</string>
+    <string name="delete_message">Вы уверены, что хотите удалить тренировку?</string>
+    <string name="deleteItem">Удалить</string>
+    <string name="repeats_read">\"Количество повторений - \"</string>
+    <string name="cycles_read">\"\nКоличество циклов - \"</string>
+    <string name="warmup_read">\"\nВремя подготовки - \"</string>
+    <string name="workout_read">\nВремя подхода работы -</string>
+    <string name="rest_read">\"\nВремя подхода отдыха - \"</string>
+    <string name="cooldown_read">\"\nВремя отдыха между сетами - \"</string>
+    <string name="all_time_read">\"\nОбщее время работы - \"</string>
 </resources>

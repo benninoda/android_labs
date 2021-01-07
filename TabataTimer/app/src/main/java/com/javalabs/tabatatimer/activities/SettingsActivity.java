@@ -1,10 +1,10 @@
 package com.javalabs.tabatatimer.activities;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -24,6 +24,11 @@ public class SettingsActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     SwitchPreferenceCompat themePreference;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase));
+    }
 
     @SuppressLint("CommitPrefEdits")
     @Override
@@ -47,8 +52,6 @@ public class SettingsActivity extends AppCompatActivity {
         themePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object o) {
-                Log.e("D", "pref pls " + preference);
-                Log.e("D", "obj pls " + o);
                 if ((boolean) o) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     editor.putBoolean("mode", true);
@@ -78,13 +81,8 @@ public class SettingsActivity extends AppCompatActivity {
                 } else {
                     LocaleHelper.setLocale(getBaseContext(), "ru");
                 }
-                Log.e("D", "here");
-                Intent v = new Intent( SettingsActivity.this, SettingsActivity.class);
-                Log.e("D", "no here");
                 finish();
-                Log.e("D", "after finish");
-                startActivity(v);
-                Log.e("D", "after start sctivity");
+                startActivity(new Intent(SettingsActivity.this, SettingsActivity.this.getClass()));
                 return true;
             }
         });
